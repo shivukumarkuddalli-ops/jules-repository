@@ -9,6 +9,10 @@ A comprehensive guide to "Hello World" — the foundational program in computer 
 - [Overview](#overview)
 - [History & Origin](#history--origin)
 - [Significance in Software Engineering](#significance-in-software-engineering)
+- [Detailed Look: C "Hello, World!" Program](#detailed-look-c-hello-world-program)
+  - [Source Code](#source-code)
+  - [Line-by-Line Breakdown](#line-by-line-breakdown)
+  - [Compilation and Execution Process](#compilation-and-execution-process)
 - [Implementations across Programming Languages](#implementations-across-programming-languages)
   - [Python](#python)
   - [JavaScript](#javascript)
@@ -71,6 +75,59 @@ While printing text to a terminal might seem trivial, a successful "Hello, World
 2. **Build Toolchain**: Validates linking, header files, and output executable generation.
 3. **Syntax & Structure**: Demonstrates the basic boilerplate required by a language (entry point functions, modules/packages, standard output libraries).
 4. **Environment Health Check**: Serves as a quick sanity check during CI/CD pipeline setup or dockerized container deployment.
+
+---
+
+## Detailed Look: C "Hello, World!" Program
+
+The C implementation of "Hello, World!" is historically significant and serves as the model for compiled programming languages.
+
+### Source Code
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    printf("Hello, World!\n");
+    return 0;
+}
+```
+
+### Line-by-Line Breakdown
+
+1. **`#include <stdio.h>`**
+   - A preprocessor directive that includes the Standard Input/Output header file (`stdio.h`).
+   - Provides the declaration for the function `printf()`.
+
+2. **`int main(void)`**
+   - The primary entry point for any C program.
+   - `int` indicates that the function returns an integer status code to the operating system upon completion.
+   - `(void)` indicates that the `main` function accepts no command-line arguments.
+
+3. **`printf("Hello, World!\n");`**
+   - Calls the standard library function `printf` to output formatted text to standard output (`stdout`).
+   - The escape sequence `\n` outputs a newline character, moving the cursor to the beginning of the next line.
+
+4. **`return 0;`**
+   - Returns the status code `0` to the operating system, conventionally signalling that the program executed successfully without errors.
+
+### Compilation and Execution Process
+
+To run a C program, it must first be translated into an executable machine binary using a compiler such as GCC or Clang:
+
+1. **Preprocessing**: Preprocessor directives (like `#include`) are expanded.
+2. **Compilation**: Source code is converted into assembly code.
+3. **Assembly**: Assembly code is converted into machine code (object file).
+4. **Linking**: Object code is linked with standard library functions to generate an executable binary file.
+
+#### Command to Compile and Execute
+```bash
+# Compile with GCC
+gcc -Wall -Wextra -std=c11 hello.c -o hello
+
+# Execute the compiled binary
+./hello
+```
 
 ---
 
